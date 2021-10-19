@@ -10,7 +10,12 @@ module Pokesite
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    # this below code makes it so rails can find the image in our assets/images folder
+    config.assets.paths << Rails.root.join('app', 'assets')
 
+    Dir.glob("#{Rails.root}/app/assets/images/**/").each do |path|
+      config.assets.paths << path
+    end
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
