@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/index'
   get 'ability/index'
   get 'ability/show'
   get 'attack_types/index'
